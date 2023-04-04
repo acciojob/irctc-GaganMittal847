@@ -32,11 +32,11 @@ public class TrainService {
             stationRoute1+=s+",";
         }
         train.setRoute(stationRoute1);
-        trainRepository.save(train);
+        Train train1 = trainRepository.save(train);
         //and route String logic to be taken from the Problem statement.
         //Save the train and return the trainId that is generated from the database.
         //Avoid using the lombok library
-        return train.getTrainId();
+        return train1.getTrainId();
     }
 
     public Integer calculateAvailableSeats(SeatAvailabilityEntryDto seatAvailabilityEntryDto){
