@@ -125,7 +125,7 @@ public class TrainService {
             String arr[] = route.split(",");
             for(int i=0;i<arr.length;i++) {
                 if (arr[i] == station.toString()) {
-                    int cal = (i + 1) * 60;
+                    int cal = (i) * 60;
                     if (cal >= startT && cal <= endT) {
                         ans.add(train.getTrainId());
                     }
