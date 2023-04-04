@@ -28,9 +28,12 @@ public class TrainService {
         train.setDepartureTime(trainEntryDto.getDepartureTime());
         List<Station> stationRoute = trainEntryDto.getStationRoute();
         String stationRoute1 = "";
-        for(Station s : stationRoute){
-            stationRoute1+=s+",";
+        for(int i=0;i<stationRoute.size()-1;i++){
+            stationRoute1+=stationRoute.get(i).toString();
+            stationRoute1+=",";
         }
+        stationRoute1+=stationRoute.get(stationRoute.size()-1).toString();
+
         train.setRoute(stationRoute1);
         Train train1 = trainRepository.save(train);
         //and route String logic to be taken from the Problem statement.
